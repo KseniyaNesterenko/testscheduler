@@ -94,7 +94,12 @@ jobs:
   upload_reports:
     needs: test
     runs-on: ubuntu-latest
+
+    env:
+      SCHEDULER_URL: ${{ secrets.SCHEDULER_URL }}
+
     if: always()
+
     steps:
       - uses: actions/checkout@v4
 
